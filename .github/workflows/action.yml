@@ -1,0 +1,21 @@
+name: Upload Artifact
+
+on: []
+
+jobs:
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Create a file
+      run: echo "Hello World!" > sample.txt
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: sample-artifact
+        path: sample.txt
